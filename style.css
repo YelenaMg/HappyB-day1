@@ -4,59 +4,89 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 /* Ընդհանուր Ոճեր */
 body {
-    font-family: 'Arial', sans-serif; /* Ավելի ժամանակակից, տոնական ֆոնտ */
+    font-family: 'Arial', sans-serif;
+    /* Ավելի ժամանակակից, տոնական ֆոնտ */
     line-height: 1.6;
-    color: #333; 
-    font-size: 16px; 
+    color: #333;
+    font-size: 16px;
 }
-
+*:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+button:active, 
+button:visited:focus, /* Ավելացվել է լրացուցիչ անվտանգության համար */
+button:focus,
+button:focus,
+button:active,
+button:active {
+    /* Բացարձակապես հեռացնել բրաուզերի ուրվագիծը */
+    outline: none !important; 
+    
+    /* Հեռացնել ցանկացած ստվեր */
+    box-shadow: none !important;
+    
+    /* Վերականգնել ֆոնի գույնը՝ ապահովելով, որ այն կապույտ չլինի */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    
+    /* Որոշ բրաուզերներ օգտագործում են border-ը նույնպես */
+    border: none !important;
+}
 /* 2. Wrapper - Ֆոնային Պատկեր (Փուչիկներով) */
 .wrapper {
     width: 100%;
-    overflow-x: hidden; 
-    
+    overflow-x: hidden;
+
     /* ԲԵԳՐԱՈՒՆԴ ՖՈՏՈՅԻ ՈՃԵՐԸ */
     /* Խնդրում եմ փոխարինել 'bubbles-bg.jpg'-ը Ձեր նկարի ճիշտ հասցեով */
-    background-image: url('./բգ.jpg'); 
+    background-image: url('./բգ.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Ֆոնը մնում է անշարժ */
-    background-position: center center; 
-    background-size: cover; 
-    min-height: 100vh; 
+    background-attachment: fixed;
+    /* Ֆոնը մնում է անշարժ */
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 /* 3. Container - Կիսաթափանցիկ Ֆոն */
 .container {
-    max-width: 650px; /* Մի փոքր ավելի լայն, քան հարսանեկանը */
-    width: 95%;
-    margin: 0 auto; 
-    padding: 20px 15px; 
-    text-align: center; 
-    
+    max-width: 650px;
+    /* Մի փոքր ավելի լայն, քան հարսանեկանը */
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 15px;
+    text-align: center;
+
     /* Կիսաթափանցիկ Ֆոն Տեքստի Ընթեռնելիության Համար */
-    background-color: rgba(255, 255, 255, 0.95); /* Բաց, գրեթե սպիտակ ֆոն */
-    border-radius: 20px; /* Ավելի կլոր անկյուններ՝ տոնականության համար */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); 
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Բաց, գրեթե սպիտակ ֆոն */
+    border-radius: 20px;
+    /* Ավելի կլոր անկյուններ՝ տոնականության համար */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 /* Ընդհանուր Վերնագրերի Ոճեր */
-h1, h2, h3 {
-    font-family: 'Georgia', serif; /* Տոնական ոճ */
-    color: #e91e63; /* Տոնական, վառ գույն (օրինակ՝ վարդագույն) */
+h1,
+h2,
+h3 {
+    font-family: 'Georgia', serif;
+    /* Տոնական ոճ */
+    color: #e91e63;
+    /* Տոնական, վառ գույն (օրինակ՝ վարդագույն) */
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 h2 {
     /* Ռեսպոնսիվ չափս clamp-ի միջոցով */
-    font-size: clamp(1.8em, 6vw, 3em); 
+    font-size: clamp(1.8em, 6vw, 3em);
 }
 
 p {
@@ -66,9 +96,9 @@ p {
 /* --- HEADER-Ի ԲԱԺԻՆ --- */
 
 .header {
-    position: relative; 
-    padding: 50px 0; 
-    overflow: hidden; 
+    position: relative;
+    padding: 50px 0;
+    overflow: hidden;
 }
 
 /* Գլխավոր Վերնագիրը */
@@ -76,22 +106,23 @@ p {
     font-size: clamp(2.4em, 8vw, 3.5em);
     color: #e91e63;
     z-index: 5;
-    position: relative; 
-    display: inline-block; 
+    position: relative;
+    display: inline-block;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Փոքր Նկարների Ընդհանուր Ոճեր */
 .header img {
-    position: absolute; 
-    width: 100px; 
+    position: absolute;
+    width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 50%; /* Կլոր նկարներ */
-    border: 3px solid #f48fb1; 
+    border-radius: 50%;
+    /* Կլոր նկարներ */
+    border: 3px solid #f48fb1;
     z-index: 2;
 }
 
@@ -101,18 +132,18 @@ p {
 .img-1 {
     top: 5px;
     left: 10px;
-    transform: rotate(-15deg); 
-    animation: floating 4s ease-in-out infinite alternate; 
+    transform: rotate(-15deg);
+    animation: floating 4s ease-in-out infinite alternate;
 }
 
 /* 2. Վերևի Աջ Նկար */
 .img-2 {
     top: 20px;
     right: 25px;
-    width: 70px; 
+    width: 70px;
     height: 70px;
     transform: rotate(10deg);
-    animation: floating 5s ease-in-out infinite alternate 0.5s; 
+    animation: floating 5s ease-in-out infinite alternate 0.5s;
 }
 
 /* 3. Ներքևի Ձախ Նկար */
@@ -138,6 +169,7 @@ p {
     0% {
         transform: translateY(0) rotate(0);
     }
+
     100% {
         transform: translateY(-15px) rotate(5deg);
     }
@@ -146,14 +178,14 @@ p {
 /* --- ՄԵԴԻԱ ՀԱՐՑՈՒՄՆԵՐ (Ռեսպոնսիվություն) --- */
 
 @media (max-width: 600px) {
-    
+
     .header {
         padding: 40px 0;
     }
-    
+
     /* Փոքր նկարների չափսերի փոփոխություն */
     .header img {
-        width: 45px; 
+        width: 45px;
         height: 45px;
     }
 
@@ -166,7 +198,7 @@ p {
     .img-2 {
         top: 10px;
         right: 5px;
-        width: 55px; 
+        width: 55px;
         height: 55px;
     }
 
@@ -181,10 +213,11 @@ p {
         width: 40px;
         height: 40px;
     }
-    
+
     .header h1 {
         padding: 8px 15px;
-        font-size: clamp(2em, 7vw, 3em); /* Փոքրացնում ենք h1-ը փոքր էկրաններում */
+        font-size: clamp(2em, 7vw, 3em);
+        /* Փոքրացնում ենք h1-ը փոքր էկրաններում */
     }
 }
 
@@ -199,7 +232,8 @@ p {
 .calendar-box {
     padding: 20px;
     margin-top: 30px;
-    border-top: 2px solid #f06292; /* Վարդագույն գիծ */
+    border-top: 2px solid #f06292;
+    /* Վարդագույն գիծ */
     border-bottom: 2px solid #f06292;
 }
 
@@ -213,17 +247,20 @@ p {
 
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 հավասար սյունակ (Ռեսպոնսիվ) */
-    gap: 5px; 
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 հավասար սյունակ (Ռեսպոնսիվ) */
+    gap: 5px;
     max-width: 450px;
     margin: 0 auto;
-    background-color: #fce4ec; /* Բաց վարդագույն ֆոն */
+    background-color: #fce4ec;
+    /* Բաց վարդագույն ֆոն */
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
 }
 
-.day, .day-name {
+.day,
+.day-name {
     padding: 5px;
     font-size: clamp(0.8rem, 3vw, 1rem);
     text-align: center;
@@ -241,19 +278,21 @@ p {
 /* Շաբաթ-կիրակիի Ոճը */
 .day-name.weekend,
 .day.weekend {
-    color: #a0522d; 
+    color: #a0522d;
 }
 
 /* ԾՆՆԴՅԱՆ ՕՐՎԱ ՆՇՈՒՄԸ */
 .day.birthday {
-    background-color: #ff4081; /* Վառ վարդագույն */
+    background-color: #ff4081;
+    /* Վառ վարդագույն */
     color: white;
     font-size: clamp(1rem, 4vw, 1.2rem);
     font-weight: 900;
-    transform: scale(1.1); 
+    transform: scale(1.1);
     position: relative;
     z-index: 2;
-    animation: pulse 1.5s infinite alternate; /* Թույլ թրթռոց */
+    animation: pulse 1.5s infinite alternate;
+    /* Թույլ թրթռոց */
 }
 
 .calendar-note {
@@ -268,6 +307,7 @@ p {
     0% {
         box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.4);
     }
+
     100% {
         box-shadow: 0 0 0 10px rgba(233, 30, 99, 0);
     }
@@ -282,19 +322,22 @@ p {
 
 .running-numbers-box {
     padding: 30px 20px;
+
 }
 
 .countdown-title {
     color: #e91e63;
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 25px;
 }
 
 .countdown-timer {
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Թվերն ու տառերը հավասարեցնում ենք */
-    gap: 5px; /* Փոքր տարածություն բլոկների միջև */
+    align-items: flex-end;
+    /* Թվերն ու տառերը հավասարեցնում ենք */
+    gap: 5px;
+    /* Փոքր տարածություն բլոկների միջև */
     max-width: 550px;
     margin: 0 auto;
     padding: 15px 0;
@@ -307,12 +350,15 @@ p {
 }
 
 .time-unit .number {
-    font-size: clamp(2rem, 9vw, 3.5rem); /* Մեծ, ռեսպոնսիվ թիվ */
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    /* Մեծ, ռեսպոնսիվ թիվ */
     font-weight: 900;
-    color: #ff4081; /* Վառ, տոնական գույն */
+    color: #c5879a;
+    /* Վառ, տոնական գույն */
     padding: 5px 10px;
     border-radius: 8px;
-    background-color: #fffaf0; /* Բաց ֆոն */
+    background-color: #fffaf0;
+    /* Բաց ֆոն */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     line-height: 1;
 }
@@ -327,7 +373,7 @@ p {
 /* Բաժանարար Գծերի Ոճավորում */
 .countdown-timer .number:nth-child(2) {
     font-size: clamp(2rem, 9vw, 3.5rem);
-    color: #f06292;
+    color: #FBE3EB;
     padding: 0 5px;
     background-color: transparent;
     box-shadow: none;
@@ -353,7 +399,7 @@ p {
 .location-subtitle {
     color: #888;
     font-size: clamp(1.2rem, 4vw, 1.5rem);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .restaurant-name {
@@ -370,16 +416,19 @@ p {
 /* ՏԵՔՍՏԱՅԻՆ ԱՆԻՄԱՑԻԱ */
 .pulsing-text {
     /* Անիմացիան կիրառում ենք ռեստորանի անվանման վրա */
-    animation: pulse-scale 2s infinite alternate; 
-    display: inline-block; /* Անհրաժեշտ է scale-ի ճիշտ աշխատանքի համար */
+    animation: pulse-scale 2s infinite alternate;
+    display: inline-block;
+    /* Անհրաժեշտ է scale-ի ճիշտ աշխատանքի համար */
 }
 
 @keyframes pulse-scale {
     0% {
         transform: scale(1);
     }
+
     100% {
-        transform: scale(1.05); /* 5% մեծացում */
+        transform: scale(1.05);
+        /* 5% մեծացում */
     }
 }
 
@@ -387,7 +436,8 @@ p {
 .map-link-btn {
     display: inline-block;
     padding: 10px 25px;
-    background-color: #ff4081; /* Վառ վարդագույն */
+    background-color: #981f47;
+    /* Վառ վարդագույն */
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -407,7 +457,7 @@ p {
     position: relative;
     width: 100%;
     /* 16:9 հարաբերակցություն՝ ռեսպոնսիվություն ապահովելու համար */
-    padding-bottom: 56.25%; 
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 10px;
@@ -435,6 +485,7 @@ p {
 
 .gifts-title {
     margin-bottom: 10px;
+
 }
 
 .gifts-note {
@@ -446,14 +497,15 @@ p {
 .gift-list {
     display: grid;
     /* Ռեսպոնսիվ ցանց՝ ավտոմատ սյունակներով */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .gift-item {
-    background-color: #fffaf0; /* Բաց ֆոն */
+    background-color: #fffaf0;
+    /* Բաց ֆոն */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -463,14 +515,16 @@ p {
 
 /* Անիմացիոն Էֆեկտ՝ Քարտը Բարձրանում է */
 .gift-item:hover {
-    transform: translateY(-5px) scale(1.02); 
-    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.3); /* Տոնական ստվեր */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(233, 30, 99, 0.3);
+    /* Տոնական ստվեր */
 }
 
 .gift-icon {
     font-size: 2.5em;
     margin-bottom: 10px;
-    animation: bounce-in 1s ease-out; /* Թեթև հայտնվելու անիմացիա */
+    animation: bounce-in 1s ease-out;
+    /* Թեթև հայտնվելու անիմացիա */
 }
 
 .gift-name {
@@ -487,7 +541,8 @@ p {
 /* Ռեսպոնսիվություն (Grid-ն ինքնին ռեսպոնսիվ է, բայց կարող ենք կարգավորել padding-ը) */
 @media (max-width: 550px) {
     .gift-list {
-        grid-template-columns: 1fr; /* Միայն մեկ սյունակ փոքր էկրաններին */
+        grid-template-columns: 1fr;
+        /* Միայն մեկ սյունակ փոքր էկրաններին */
     }
 }
 
@@ -526,31 +581,39 @@ p {
 
 /* Թույլատրելի գույների ֆոն */
 .allowed-colors {
-    background-color: #e8f5e9; /* Շատ բաց կանաչ */
+    background-color: #e8f5e9;
+    /* Շատ բաց կանաչ */
     border: 1px solid #c8e6c9;
 }
+
 .allowed-colors h3 {
-    color: #4caf50; /* Կանաչի երանգ */
+    color: #4caf50;
+    /* Կանաչի երանգ */
 }
 
 /* Արգելված գույների ֆոն */
 .forbidden-colors {
-    background-color: #ffebee; /* Շատ բաց կարմիր */
+    background-color: #ffebee;
+    /* Շատ բաց կարմիր */
     border: 1px solid #ffcdd2;
 }
+
 .forbidden-colors h3 {
-    color: #e53935; /* Կարմիրի երանգ */
+    color: #e53935;
+    /* Կարմիրի երանգ */
 }
 
 
 /* Գունային Շրջանակների Ընդհանուր Ոճ */
 .color-swatch {
     display: inline-block;
-    width: 55px; /* Մի փոքր մեծ չափս */
+    width: 55px;
+    /* Մի փոքր մեծ չափս */
     height: 55px;
     border-radius: 50%;
     margin: 0 8px;
-    border: 3px solid #fff; /* Սպիտակ շրջանակ */
+    border: 3px solid #fff;
+    /* Սպիտակ շրջանակ */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
     cursor: help;
@@ -563,13 +626,32 @@ p {
 }
 
 /* Գույների Սահմանում (Փոխեք Ձեր նախընտրած գույներով) */
-.green-mint { background-color: #a7ffeb; }
-.coral { background-color: #ff8a65; }
-.lilac { background-color: #e1bee7; }
-.gold { background-color: #ffc107; }
+.green-mint {
+    background-color: #a7ffeb;
+}
 
-.black-forbidden { background-color: black; border-color: #e53935; } /* Արգելվածի շրջանակը */
-.deep-navy { background-color: #1a237e; border-color: #e53935; }
+.coral {
+    background-color: #ff8a65;
+}
+
+.lilac {
+    background-color: #e1bee7;
+}
+
+.gold {
+    background-color: #ffc107;
+}
+
+.black-forbidden {
+    background-color: black;
+    border-color: #e53935;
+}
+
+/* Արգելվածի շրջանակը */
+.deep-navy {
+    background-color: #1a237e;
+    border-color: #e53935;
+}
 
 
 
@@ -590,30 +672,36 @@ p {
 }
 
 .rsvp-note {
-    font-size: clamp(1rem, 3.5vw, 1.15rem); 
-    color: #ff4081; /* Վառ կարևորում */
+    font-size: clamp(1rem, 3.5vw, 1.15rem);
+    color: #ff4081;
+    /* Վառ կարևորում */
     font-weight: bold;
     margin-bottom: 25px;
 }
 
 .rsvp-form {
     text-align: left;
-    max-width: 450px; 
+    max-width: 450px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fce4ec; /* Բաց վարդագույն ֆոն */
+    background-color: #fce4ec;
+    /* Բաց վարդագույն ֆոն */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
     font-weight: bold;
-    color: #e91e63; /* Տոնական լեյբլի գույն */
+    color: #e91e63;
+    /* Տոնական լեյբլի գույն */
     margin-bottom: 8px;
     font-size: clamp(0.9rem, 3vw, 1rem);
 }
@@ -623,7 +711,8 @@ p {
 .rsvp-form textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ffcdd2; /* Փափուկ շրջանակ */
+    border: 2px solid #ffcdd2;
+    /* Փափուկ շրջանակ */
     border-radius: 5px;
     font-family: inherit;
     font-size: 1rem;
@@ -633,14 +722,16 @@ p {
 
 .rsvp-form input[type="text"]:focus,
 .rsvp-form textarea:focus {
-    border-color: #ff4081; /* Ֆոկուսի ժամանակ վառ գույն */
+    border-color: #ff4081;
+    /* Ֆոկուսի ժամանակ վառ գույն */
     outline: none;
 }
 
 /* Ռադիո Կոճակների Խումբ */
 .radio-group {
     display: flex;
-    flex-direction: column; /* Փոքր էկրաններին լավ տեսքի համար */
+    flex-direction: column;
+    /* Փոքր էկրաններին լավ տեսքի համար */
     gap: 10px;
 }
 
@@ -654,7 +745,8 @@ p {
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #ff4081; /* Վառ վարդագույն */
+    background-color: #ff4081;
+    /* Վառ վարդագույն */
     color: white;
     border: none;
     border-radius: 25px;
@@ -675,7 +767,8 @@ p {
 /* --- FOOTER-Ի ՈՃԵՐԸ --- */
 .main-footer {
     width: 100%;
-    background-color: #ff4081; /* Ֆութերի վառ գույն */
+    background-color: #ff4081;
+    /* Ֆութերի վառ գույն */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -687,13 +780,19 @@ p {
     width: 90%;
     margin: 0 auto;
 }
+.footer-content img{
+    width: 30px;
+    height: 30px;
+}
 
 .copyright {
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
     margin: 5px 0;
     color: rgba(255, 255, 255, 0.9);
 }
-
+.designer-note{
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
 .social-links {
     margin: 15px 0;
 }
@@ -708,7 +807,7 @@ p {
 }
 
 .social-icon:hover {
-    transform: rotate(10deg) scale(1.1); 
+    transform: rotate(10deg) scale(1.1);
     color: #fce4ec;
 }
 
@@ -721,21 +820,24 @@ p {
 
 /* --- 1. ԱՐՏԱՔԻՆ ՓՈՒՉԻԿՆԵՐԻ ՖՈՆԸ (ԱՄԲՈՂՋ ԷԿՐԱՆ) --- */
 .outer-bubbles-bg {
-    position: fixed; /* Մնում է ֆոնին, երբ թերթվում է */
+    position: fixed;
+    /* Մնում է ֆոնին, երբ թերթվում է */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Բովանդակության տակ */
+    z-index: 1;
+    /* Բովանդակության տակ */
     pointer-events: none;
     overflow: hidden;
 }
 
 /* Փուչիկների Ընդհանուր Ոճեր */
 .bubble-x {
-    position: absolute; 
-    bottom: -100px; /* Սկսվում է էկրանից դուրս */
-    background-color: rgba(255, 255, 255, 0.4); 
+    position: absolute;
+    bottom: -100px;
+    /* Սկսվում է էկրանից դուրս */
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
     animation: bubble-float linear infinite;
@@ -743,9 +845,22 @@ p {
 }
 
 /* Չափսեր */
-.bubble-x.small { width: 20px; height: 20px; }
-.bubble-x.medium { width: 40px; height: 40px; background-color: rgba(223, 116, 116, 0.5); }
-.bubble-x.large { width: 60px; height: 60px; background-color: rgba(238, 102, 102, 0.3); }
+.bubble-x.small {
+    width: 20px;
+    height: 20px;
+}
+
+.bubble-x.medium {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(223, 116, 116, 0.5);
+}
+
+.bubble-x.large {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(238, 102, 102, 0.3);
+}
 
 /* ԱՆԻՄԱՑԻԱՆ (Նույնն է երկու դեպքում էլ) */
 @keyframes bubble-float {
@@ -753,13 +868,15 @@ p {
         transform: translateY(0) translateX(0);
         opacity: 0.5;
     }
+
     50% {
-        transform: translateY(-50vh) translateX(20px); 
+        transform: translateY(-50vh) translateX(20px);
         opacity: 0.8;
     }
+
     100% {
-        transform: translateY(-100vh) translateX(-20px); 
-        opacity: 0; 
+        transform: translateY(-100vh) translateX(-20px);
+        opacity: 0;
     }
 }
 
@@ -770,28 +887,167 @@ p {
 /* --- 2. ՆԵՐՔԻՆ ՓՈՒՉԻԿՆԵՐԻ ՖՈՆԸ --- */
 .container {
     /* ՊԱՐՏԱԴԻՐ. Նախապատրաստում ներքին փուչիկների համար */
-    position: relative; 
-    overflow: hidden; 
-    z-index: 5; 
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
     /* ... մնացած ոճերը ... */
 }
 
 .inner-bubbles-bg {
-    position: absolute; /* Աբսոլյուտ դիրք container-ի նկատմամբ */
+    position: absolute;
+    /* Աբսոլյուտ դիրք container-ի նկատմամբ */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Բովանդակության տակ */
+    z-index: 1;
+    /* Բովանդակության տակ */
     pointer-events: none;
     overflow: hidden;
 }
 
 /* ԲՈՎԱՆԴԱԿՈՒԹՅԱՆ Z-INDEX-Ի ԲԱՐՁՐԱՑՈՒՄ */
-.header, 
-.calendar-box, 
+.header,
+.calendar-box,
 /* ... բոլոր բաժինները ... */
 .harcatertik {
-    position: relative; 
-    z-index: 10; /* Ավելի բարձր, քան inner-bubbles-bg-ը */
+    position: relative;
+    z-index: 10;
+    /* Ավելի բարձր, քան inner-bubbles-bg-ը */
 }
+
+
+/* Ընդհանուր ոճեր երկու նկարի բոքսերի համար */
+.img-box {
+    width: 350px;
+    height: 450px;
+    margin: 30px auto;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    animation: fadeInBox 1s ease-out forwards;
+}
+
+/* ԲԱՔՍ 1 - Ֆոն և Շարժում */
+.box-1 {
+
+    animation-delay: 0s;
+}
+
+/* ԲԱՔՍ 2 - Ֆոն և Շարժում */
+.box-2 {
+    background-color: #fcf8e3;
+    border: 5px solid #b8860b;
+    animation-delay: 1.2s;
+}
+
+/* ԱՆԻՄԱՑԻՈՆ ՆԿԱՐՆԵՐԻ ՈՃԸ */
+.animated-image {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    /* Նկարը լցնելու համար */
+    border-radius: 10px;
+}
+
+/* ԱՆԻՄԱՑԻԱՆԵՐ */
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Առաջին նկարի հատուկ անիմացիա */
+.image-1 {
+    border-radius: 50%;
+    /* Շրջանաձև նկար */
+    animation: rotateSlow 8s linear infinite;
+}
+
+
+
+/* Keyframes-ները նույնն են մնում */
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseScale {
+    from {
+        transform: scale(0.98);
+    }
+
+    to {
+        transform: scale(1.02);
+    }
+}
+
+
+
+/* Միացնել աուդիո թեգը թաքցնելու համար */
+#bg-music {
+    display: none;
+}
+
+/* Կոճակի Դիրքը՝ Ֆիքսված Աջ Անկյունում */
+#music-control-button {
+    position: fixed;
+    /* Կապում է դիրքը էկրանին, ոչ թե բովանդակությանը */
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #ffd700;
+    /* Ոսկեգույն ֆոն */
+    border-radius: 50%;
+    /* Շրջանաձև տեսք */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Ապահովում է, որ լինի ամեն ինչի վերևում */
+    transition: background-color 0.3s;
+}
+
+#music-control-button:hover {
+    background-color: #e5c100;
+}
+
+/* Կոճակների (Միացված/Անջատված) ոճեր */
+#music-control-button span {
+    font-size: 1.5em;
+    line-height: 1;
+    position: absolute;
+}
+
+/* Սկզբում ցույց ենք տալիս միայն Միացված (🔊) նշանը */
+.music-on .icon-off {
+    display: none;
+}
+
+.music-off .icon-on {
+    display: none;
+}
+
+.music-off .icon-off {
+    display: block;
+}
+

@@ -103,6 +103,23 @@
     </div>
     <p class="calendar-note">Անհամբեր սպասում եմ ձեզ Հունվարի 14-ին!</p>
 </div>
+
+
+<div class="img-box box-1 visual-scene-1">
+    
+    <img src="./1g.jpg" alt="Առաջին անիմացիոն նկար" class="animated-image image-1">
+    
+</div>
+
+<audio id="bg-music" loop autoplay>
+    <source src="./Martin Mkrtchyan - Ays Erge Qonn E (mp3cut.net).mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-control-button" class="music-off">
+    <span class="icon-on">🔊</span> 
+    <span class="icon-off">🔇</span>
+</div>
+
            <div class="running-numbers-box scroll-reveal">
     <h2 class="countdown-title">Մինչև Ծնունդս Մնաց...</h2>
     
@@ -143,22 +160,30 @@
     </div>
 </div>
           <div class="location scroll-reveal">
-    <h3 class="location-subtitle">Խնջույքը</h3> 
+    <h3 class="location-subtitle">Խնջույքը տեղի կունենա</h3> 
     
     <h2 class="restaurant-name pulsing-text">Էքստրա Վիրջին Ռեստորանում</h2>
     
-    <p class="address">8 Martiros Saryan St, Yerevan 0002</p>
+    <p class="address">Սարյան 8, Երևան 0002</p>
     
-    <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="map-link-btn">Տեսնել Քարտեզի Վրա</a>
+  <a href="https://www.google.com/maps?q=8+Martiros+Saryan+St,+Yerevan" target="_blank" class="map-link-btn">
+  Տեսնել Քարտեզի Վրա
+</a>
+
+
     
     <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.271374523789!2d44.512613583271565!3d40.18041506460456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a6c4b22c3327f%3A0x6a0a09f8c85c2901!2sExtra%20Virgin!5e0!3m2!1sen!2sam!4v1700000000000!5m2!1sen!2sam" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.2358355926497!2d44.51120847644091!3d40.18117916609637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abcc682c7a069%3A0x9e1aaff42ebc1dd4!2s8%20Martiros%20Saryan%20St%2C%20Yerevan!5e0!3m2!1sen!2sam!4v1731263220003!5m2!1sen!2sam"
+    width="100%"
+    height="350"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
 </div>
            <div class="gifts-box scroll-reveal">
     <h2 class="gifts-title">Ինչ կցանկանայի ստանալ նվեր</h2>
@@ -176,7 +201,7 @@
         <div class="gift-item">
             <div class="gift-icon">✈️</div>
             <h3 class="gift-name">Ճանապարհորդություն</h3>
-            <p class="gift-details">Երազում եմ նոր վայրեր բացահայտելու մասին (կարող եք նվիրել արկածային փորձ)։</p>
+            <p class="gift-details">Երազում եմ նոր վայրեր բացահայտելու մասին։</p>
         </div>
 
         <div class="gift-item">
@@ -211,13 +236,13 @@
            <div class="harcatertik scroll-reveal">
     <h2 class="rsvp-title">Հաստատե՛ք Ձեր Ներկայությունը (RSVP)</h2>
     
-    <p class="rsvp-note">Խնդրում եմ, պատասխանեք մինչև **Հունվարի 5-ը**։</p>
+    <p class="rsvp-note">Խնդրում եմ, պատասխանեք մինչև Հունվարի 5-ը։</p>
     
     <form class="rsvp-form" action="[Ավելացրեք Ձեր Ֆորմայի Հասցեն Այստեղ]" method="POST">
         
         <div class="form-group">
             <label for="full-name">Ձեր Անունը, Ազգանունը *</label>
-            <input type="text" id="full-name" name="full-name" required placeholder="Օրինակ՝ Աննա Հակոբյան">
+            <input type="text" id="full-name" name="full-name" required placeholder="Օրինակ՝ Անի Հակոբյան">
         </div>
 
         <div class="form-group">
@@ -232,7 +257,7 @@
         </div>
         
         <div class="form-group">
-            <label for="notes">Հատուկ նշումներ (օրինակ՝ ալերգիա)</label>
+            <label for="notes">Հատուկ նշումների համար։</label>
             <textarea id="notes" name="notes" rows="3" placeholder="Կամ ուրախ շնորհավորանք"></textarea>
         </div>
         
@@ -251,6 +276,12 @@
                 <a href="[Ձեր Facebook-ի Հասցեն]" target="_blank" class="social-icon">🎈</a>
                 <a href="#" class="social-icon">🍾</a>
             </div>
+             <p class="designer-note">
+                Դիզայնը պատրաստված է սիրով @qo_onilne_hraviratoms-ի կողմից:
+            </p>
+            <a href="https://www.instagram.com/qo_onilne_hraviratoms/" target="_blank" class="social-icon">
+              <img src="./instagram.png" alt="">
+            </a>
         </div>
     </footer>
     </div>
